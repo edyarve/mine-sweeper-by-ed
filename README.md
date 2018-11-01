@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.0-rc.2.
 
 
-Please first run ‘npm install’ to download all the dependency.
+Please first run â€˜npm installâ€™ to download all the dependencies.
 
 
 ## Development server
