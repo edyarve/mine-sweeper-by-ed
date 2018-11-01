@@ -1,0 +1,14 @@
+<div class="board-border">
+  <div class="winner" *ngIf="(outcome$ | async) === true" [@winner]="'win'">
+    <h1>
+      You Win!
+    </h1>
+  </div>
+  <table class="board">
+  <tr *ngFor="let row of map$ | async; let x = index;">
+    <td *ngFor="let square of row; let y = index;">
+      <mine-square [square]="square" [disabled]="(outcome$ | async) !== undefined" (step)="onStep(x, y)" (mark)="onMark(x, y)"></mine-square>
+    </td>
+  </tr>
+</table>
+</div>

@@ -1,0 +1,31 @@
+@import "~src/styles";
+
+.masthead {
+  display: flex;
+  justify-content: space-between;
+  background: $board-color;
+  font-size: 20px;
+}
+
+.number-display {
+  display: flex;
+  margin: 8px;
+  width: 40px;
+  background: white;
+  box-shadow: inset 2px 2px gray;
+  border-radius: 5px;
+  justify-content: flex-end;
+}
+
+.left {
+  display:flex;
+}
+.mines {
+}
+
+.new-game {
+}
+
+.timer {
+}
+

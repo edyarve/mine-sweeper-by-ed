@@ -1,0 +1,25 @@
+<div  class="exploded" *ngIf="square.action === Action.EXPLODED">
+  <mat-icon>brightness_high</mat-icon>
+</div>
+<ng-container *ngIf="square.action === Action.STEPPED">
+  <mat-icon class="mine" *ngIf="square.bomb" [@step]="'mine'">brightness_high</mat-icon>
+  <ng-container *ngIf="!square.bomb" >
+    <div class="empty" *ngIf="square.touchingBombs===0" [@step]="'empty'">
+      <span></span>
+    </div>
+    <div class="stepped"  *ngIf="square.touchingBombs!==0" [@step]="'digit'">
+      <span *ngIf="square.touchingBombs===1" style="color:blue">{{square.touchingBombs}}</span>
+      <span *ngIf="square.touchingBombs===2" style="color:green">{{square.touchingBombs}}</span>
+      <span *ngIf="square.touchingBombs===3" style="color:red">{{square.touchingBombs}}</span>
+      <span *ngIf="square.touchingBombs===4" style="color:darkblue">{{square.touchingBombs}}</span>
+      <span *ngIf="square.touchingBombs===5" style="color:darkred">{{square.touchingBombs}}</span>
+      <span *ngIf="square.touchingBombs===6" style="color:turquoise">{{square.touchingBombs}}</span>
+      <span *ngIf="square.touchingBombs===7" style="color:darkgreen">{{square.touchingBombs}}</span>
+      <span *ngIf="square.touchingBombs===8" style="color:grey">{{square.touchingBombs}}</span>
+    </div>
+  </ng-container>
+</ng-container>
+<button mat-button (click)="step.emit()" (contextmenu)="onMark()" *ngIf="square.action === Action.MARKED" class="new" [disabled]="disabled">
+  <mat-icon class="marked">outlined_flag</mat-icon>
+</button>
+<button mat-button (click)="step.emit()" (contextmenu)="onMark()" *ngIf="square.action === Action.NONE" class="new" [disabled]="disabled"></button>

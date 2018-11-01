@@ -1,0 +1,15 @@
+.board-border {
+  box-shadow: inset 2px 2px gray;
+  border-radius: 5px;
+}
+.board {
+  border-spacing: 2px;
+}
+
+.winner {
+  position: absolute;
+  z-index: 1000;
+  filter:blur(0.2px);
+  margin-left: 0%;
+  color: white;
+}

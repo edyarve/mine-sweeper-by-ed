@@ -1,0 +1,25 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+.map-x {
+  justify-content: right;
+  width: 45%;
+//  margin-right: 15px;
+}
+.map-y {
+  justify-content: end;
+  width: 45%;
+}
+.map {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.control {
+  margin: 0 15px; ;
+}
+.button {
+  margin: 15px; ;
+}

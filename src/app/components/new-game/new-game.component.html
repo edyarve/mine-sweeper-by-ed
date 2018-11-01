@@ -1,0 +1,31 @@
+<div >
+  <div class="settings" [formGroup]="sizeForm" validate (ngSubmit)="onNewGame()">
+    <mat-form-field class="control">
+      <input [placeholder]="'Mines'" matInput  type="number"
+             formControlName="mines">
+      <mat-error>
+        {{getErrorMessage('mines')}}
+      </mat-error>
+    </mat-form-field>
+    <div class="map control">
+      <mat-form-field class="map-x">
+        <input [placeholder]="'Height'" matInput type="number" formControlName="height">
+        <mat-error>
+          {{getErrorMessage('height')}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="map-y">
+        <input [placeholder]="'Width'" matInput type="number" formControlName="width">
+        <mat-error>
+          {{getErrorMessage('width')}}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div style="height:30px;margin:0 10px 0 0 ;">
+      <mat-error *ngIf="sizeForm.errors">
+        <small>{{MINE_ERROR}}</small>
+      </mat-error>
+    </div>
+    <button mat-raised-button class="button" (click)="onNewGame()" [disabled]="!sizeForm.valid">Start Game</button>
+  </div>
+</div>

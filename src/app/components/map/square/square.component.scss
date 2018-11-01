@@ -1,0 +1,49 @@
+@import "~src/styles";
+
+%square {
+  display: flex;
+  width: $side;
+  height: $side;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  min-width: 0;
+  padding:0;
+}
+
+.stepped {
+  @extend %square;
+  background: $board-color;
+  opacity: 0.8;
+  transform: scale(0.8);
+}
+.mine {
+  @extend %square;
+  background: $board-color;
+  opacity: 0.5;
+  transform: scale(0.5);
+}
+
+.empty {
+  @extend %square;
+  background: $board-color;
+  opacity: 0.1;
+  transform: scale(0.1);
+}
+
+.exploded {
+  @extend %square;
+  background: $board-color;
+  color: red;
+}
+
+.new {
+  @extend %square;
+  border: gray solid 1px;
+  box-shadow: 1px 1px $board-color;
+}
+
+.marked {
+  font-size: 18px;
+  margin-top: -12px;
+}

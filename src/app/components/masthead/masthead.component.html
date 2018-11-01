@@ -1,0 +1,18 @@
+<div class="masthead">
+  <div class="left">
+    <button id="menu" mat-icon-button (click)="openSettings()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div id="mines" class="number-display">{{remainingMines$ | async}}</div>
+
+  </div>
+  <div>
+    <button id="button" mat-icon-button class="new-game" (click)="newGame()">
+      <mat-icon *ngIf="(outcome$ | async) === false">fiber_new</mat-icon>
+      <mat-icon *ngIf="(outcome$ | async) === true">sentiment_satisfied_alt</mat-icon>
+      <mat-icon *ngIf="(outcome$ | async) === undefined">face</mat-icon>
+    </button>
+  </div>
+  <div id="timer" class="number-display">{{timer$ | async}}</div>
+</div>
+
